@@ -1,0 +1,50 @@
+/* .move_100_days .product__info-container .product-form {
+    margin: 1rem 0 1.2rem;
+}
+.d-none{
+	display: none;	
+}
+
+.move_100_days .dayReturns{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.move_100_days .dayText{
+	padding-top: 2px;
+	color: #252427;
+	font-size: 15.949px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin-left: 6px;
+} */
+
+
+.move_100_days .product__info-container .product-form {
+    margin: 1rem 0 1.2rem;
+}
+.d-none{
+	display: none;	
+}
+
+.move_100_days .dayReturns{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.move_100_days .dayText{
+	padding-top: 2px;
+	color: #252427;
+	font-size: 15.949px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin-left: 6px;
+}
+
+@media only screen and (max-width: 749px) and (min-width:680px){
+	.move_100_days .dayReturns {
+    	padding-right: 60px;
+	}
+}

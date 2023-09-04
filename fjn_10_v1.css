@@ -1,0 +1,19 @@
+/* js and css solution  */
+.grid-product__link{
+	position: relative;
+}
+.grid-product__link::before{
+	position: absolute;
+    height: 27px;
+    right: 0; 
+    z-index: 2;
+    top: 0px;
+}
+.grid-product__tag.grid-product__tag--sale+a.grid-product__link::before{
+	top: 32px;
+}
+
+a[href*='/products/womens-pastel-flared-fitjeans-khaki']::before, a[href*='/products/womens-regular-v2-flared-fitjeans-arctic-light-blue']::before, a[href*='/products/womens-pastel-flared-v3-fitjeans-white']::before, a[href*='/products/womens-pastel-flared-fitjeans-sand']::before, a[href*='/products/womens-regular-v3-flared-high-waisted-fitjeans-vintage-blue']::before, a[href*='/products/womens-regular-v2-flared-high-waisted-fitjeans-80s-blue']::before, a[href*='/products/womens-contour-v2-high-waisted-fitjeans-black']::before,  a[href*='/products/womens-contour-v2-high-waisted-fitjeans-arctic-light-blue']::before, a[href*='/products/womens-contour-v2-high-waisted-fitjeans-azure-blue']::before, a[href*='/products/womens-traditional-v2-straight-leg-high-waisted-fitjeans-80s-blue']::before, a[href*='/products/womens-baggy-ripped-fitjeans-80s-blue']::before, a[href*='/products/womens-traditional-v2-baggy-fitjeans-black-1']::before, a[href*='/products/womens-fitjeans-ripped-shorts-vintage-blue']::before, a[href*='/products/womens-fitjeans-shorts-80s-blue']::before,
+	a[href*='/products/womens-frame-fitjeans-grey']::before, a[href*='/products/womens-frame-fitjeans-arctic-light-blue']::before, a[href*='/products/womens-regular-v2-4-hole-ripped-high-waisted-fitjeans-arctic-light-blue']::before, a[href*='/products/womens-360-v2-high-waisted-fitjeans-arctic-light-blue']::before, a[href*='/products/womens-360-v2-high-waisted-fitjeans-deep-indigo']::before, a[href*='/products/womens-regular-v2-super-ripped-high-waisted-fitjeans-arctic-light-blue']::before{
+    content: var(--FJN-10-svg);
+}

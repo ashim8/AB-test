@@ -1,0 +1,82 @@
+1)15min
+2)2h
+3)1h[if designer provide all logos then it'll be 20min]
+4)
+5)need clarification[i assumed 1h]
+6)
+7)15min
+8)
+9)
+10)15min
+11)10min
+
+
+	https://efa2-202-53-167-221.ngrok-free.app/mezzanine/[old]
+
+ https://c9b8-103-121-36-5.ngrok-free.app/mezzanine/
+ https://efa2-202-53-167-221.ngrok-free.app/mezzanine/wp-content/uploads/2023/05/
+ https://c9b8-103-121-36-5.ngrok-free.app/mezzanine/wp-content/uploads/2023/05/
+ https://staging.sellmypalletracking.co.uk/wp-content/uploads/2023/05/
+ 
+..........
+7-10-2023
+Mezzanine Experts, Suite 2, Unit 3 Griffin Mil, Amberley Street, Blackburn, BB2 2QH
+
+info@d60c-202-53-164-153.ngrok-free.app -> info@c9b8-103-121-36-5.ngrok-free.app
+
+.client_icons{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+//653
+/* .client_icons a:not(:last-child){
+  padding-right: 18px;
+} */
+
+//979
+.container .client_icons {
+    /* new */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* //old */
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  
+ https://www.stakapal.co.uk/
+ https://www.mecalux.co.uk/warehouse-solutions/racking-shelving
+ https://www.redirack.co.uk/
+ https://www.nedcon.com/en/
+ 
+ https://www.stow-group.com/en
+ https://stow-racking.co.uk/
+ 
+ 
+ 53.739006205550574
+
+-2.499627480210853
+
+53.73784937761004
+-2.499627480210853
+
+
+<div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Malet%20St,%20London%20WC1E%207HU,%20United%20Kingdom+(Your%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+ 
+ .............
+ drip
+  https://c9b8-103-121-36-5.ngrok-free.app/drip_wordpress
+  https://efa2-202-53-167-221.ngrok-free.app/drip_wordpress
+  
+  
+  <?php echo $mezzanine_address; ?></li>
+  
+  
+  https://staging.sellmypalletracking.co.uk/
+  
+  poster="<?php echo esc_url(get_template_directory_uri()."/assets/img/previous-jobs/previous-jobs-poster.png") ?>"
+  
+  

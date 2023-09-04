@@ -1,0 +1,444 @@
+function waitForElem(
+    waitFor,
+    callback,
+    minElements = 1,
+    isVariable = false,
+    timer = 10000,
+    frequency = 25
+  ) {
+    let elements = isVariable
+      ? window[waitFor]
+      : document.querySelectorAll(waitFor);
+    if (timer <= 0) return;
+    (!isVariable && elements.length >= minElements) ||
+    (isVariable && typeof window[waitFor] !== "undefined")
+      ? callback(elements)
+      : setTimeout(
+          () =>
+            waitForElem(
+              waitFor,
+              callback,
+              minElements,
+              isVariable,
+              timer - frequency
+            ),
+          frequency
+        );
+  }
+  waitForElem(".summary.entry-summary", (element) => {
+    if (element) {
+      let GLO_7 = {
+        init: function () {
+          this.mainCss();
+          this.mainJs();
+        },
+        mainCss: function () {
+          var styles = document.createElement("style");
+          styles.setAttribute("type", "text/css");
+          document.head.appendChild(styles).textContent = ``;
+        },
+        mainJs: function () {
+          document.querySelector('body').classList.add('GLO_7');
+          const tik_icon = 
+          `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M14.1321 2.09291C13.5124 1.75926 12.8213 2.40273 12.4161 2.78405C11.4867 3.68969 10.7002 4.73832 9.81839 5.69162C8.84125 6.74025 7.93562 7.78888 6.93466 8.81371C6.36268 9.38569 5.74303 10.0053 5.36171 10.7203C4.50374 9.88613 3.76494 8.9805 2.81164 8.24173C2.12049 7.71742 0.976534 7.3361 1.00037 8.59922C1.04803 10.2437 2.50181 12.0073 3.57428 13.1274C4.02709 13.604 4.6229 14.1045 5.31405 14.1284C6.14818 14.176 7.00615 13.1751 7.50664 12.6269C8.38848 11.6736 9.10345 10.6011 9.91372 9.62402C10.9623 8.33706 12.0348 7.0739 13.0596 5.76311C13.7031 4.95281 15.7288 2.95084 14.1321 2.09291Z" fill="#AD976E"/>
+          </svg>`
+          
+          const shipping_section =
+          `<div class="shipping_section">
+              <ul>
+                  <li>
+                      <div class="shipping_section_heading"> 
+                          <div class="svg_wrapper">${tik_icon}</div> 
+                          <p>Gratis-Versand…</p>
+                      </div>
+                      <div class="sublist">
+                          <span>... ab 50€ in Deutschland</span>
+                          <span>... ab 100€ in Österreich & Schweiz</span>
+                          <span>... für alle Abo-Lieferungen</span>
+                      </div>
+                  </li>
+                  <li>
+                      <div class="shipping_section_heading"> 
+                          <div class="svg_wrapper">${tik_icon}</div>
+                          <P>Gratis Rücksendungen</P>
+                           
+                      </div>
+                  </li>
+                  <li>
+                      <div class="shipping_section_heading"> 
+                          <div class="svg_wrapper">${tik_icon}</div>
+                          <p>Lieferung in 3–4 Werktagen</p>
+                      </div>
+                  </li>
+              </ul>
+          </div>`
+          
+          let entry_summary = document.querySelector('.product-information .entry-summary');
+          entry_summary.insertAdjacentHTML('beforeend',shipping_section);
+          document.querySelector('.wcsatt-options-prompt-radios li:nth-child(1)').classList.add("option_one");	
+          document.querySelector('.wcsatt-options-prompt-radios li:nth-child(2)').classList.add("option_two");
+          
+          let option_one_content = 
+          `<div class="quantity_and_submit_wrapper btn_one">
+              <div class="quantity_wrapper">
+                  <div class="quantity-nav">
+                      <div class="quantity-down">-</div>
+                  </div>
+                  <input type="number"  class="GLO_7_input input-text qty" name="quantity" value="1" title="Menge" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off" data-adtribute-listener="true">
+                  <div class="quantity-nav">
+                      <div class="quantity-up">+</div>
+                  </div>
+               </div>
+              <div class="glo_submit_btn">
+                  <button type="submit" name="add-to-cart" value="46" class="single_add_to_cart_button button wp-element-button">In den Warenkorb</button>
+              </div>
+          </div>`
+          document.querySelector('.option_one .wcsatt-options-prompt-label').insertAdjacentHTML('beforeend',option_one_content);
+          
+          let option_two_content = 
+          `<span class="wcsatt-options-prompt-action-custom">
+              Abonnieren und 15% Sparen
+              <p class="price subscription-price">
+               Statt <span class="line-through">29,99€</span> Nur 25,49€ p.m.
+              </p>
+          </span>
+          <div class="quantity_and_submit_wrapper btn_two d-none">
+              <div class="quantity_wrapper">
+                  <div class="quantity-nav">
+                      <div class="quantity-down">-</div>
+                  </div>
+                  <input type="number"  class="GLO_7_input input-text qty" name="quantity" value="1" title="Menge" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off" data-adtribute-listener="true">
+                  <div class="quantity-nav">
+                      <div class="quantity-up">+</div>
+                  </div>
+               </div>
+              <div class="glo_submit_btn">
+                  <button type="submit" name="add-to-cart" value="46" class="single_add_to_cart_button button wp-element-button">In den Warenkorb</button>
+              </div>
+          </div>`
+          document.querySelector('.option_two').classList.add('opacity');
+          document.querySelector('.option_two .wcsatt-options-prompt-label').insertAdjacentHTML('beforeend',option_two_content);
+          let input_value = document.querySelector(".input-text.qty.text").value;
+          document.querySelectorAll(".GLO_7_input").forEach( input_data => {
+                      input_data.value = input_value;
+                  })
+          document.querySelector(".option_one input").setAttribute('checked','')
+          if(!sessionStorage.getItem("selected_class")){
+              sessionStorage.setItem("selected_class", 'option_one');
+          }
+          document.querySelector('.option_one').addEventListener('click', (e)=>{
+               if(document.querySelector('.btn_one').classList.contains('d-none') && document.querySelector('.option_one').classList.contains('opacity')){
+                  document.querySelector('.btn_one').classList.add('d-block');
+                  document.querySelector('.btn_one').classList.remove('d-none');
+                  document.querySelector('.option_one').classList.remove('opacity');
+                  document.querySelector('.option_two').classList.add('opacity');
+                  document.querySelector('.btn_two').classList.add('d-none');
+                  document.querySelector('.btn_two').classList.remove('d-block');
+                  document.querySelector('.option_one .wcsatt-options-prompt-action-input').click();
+                  document.querySelectorAll('.price .woocommerce-Price-amount.amount bdi')[0].textContent = "29,99€";
+                  document.querySelectorAll(".price.price-unit .woocommerce-Price-amount.amount")[0].textContent = "6,00 €";
+              }
+           });
+           document.querySelector('.option_two').addEventListener('click', (e)=>{
+               if(document.querySelector('.btn_two').classList.contains('d-none') && document.querySelector('.option_two').classList.contains('opacity') ){
+                   document.querySelector('.btn_two').classList.add('d-block');
+                  document.querySelector('.btn_two').classList.remove('d-none');
+                  document.querySelector('.option_two').classList.remove('opacity');
+                  document.querySelector('.option_one').classList.add('opacity');
+                  document.querySelector('.btn_one').classList.add('d-none');
+                  document.querySelector('.btn_one').classList.remove('d-block');
+                  document.querySelector('.option_two .wcsatt-options-prompt-action-input').click();
+                  document.querySelectorAll('.price .woocommerce-Price-amount.amount bdi')[0].textContent = "25,49€";
+                  document.querySelectorAll(".price.price-unit .woocommerce-Price-amount.amount")[0].textContent = "5,00 €";
+              }
+           });
+          
+          document.querySelectorAll(".glo_submit_btn button").forEach(custom_button => {
+              custom_button.addEventListener('click', (event) => {
+              document.querySelectorAll(".wcsatt-options-prompt-action-input").forEach(e=>{
+              if(e.checked){
+                  const selected_class = e.closest('li').classList[1];
+                  sessionStorage.setItem("selected_class", selected_class);
+                  }
+              })
+              
+              })
+          });
+          if(sessionStorage.getItem('selected_class')){
+              const get_items = sessionStorage.getItem('selected_class');
+              if(get_items==="option_one"){
+                  document.querySelector(".option_one input").click()
+              }
+              else if(get_items==="option_two"){
+                  document.querySelector(".option_two input").click();
+              }
+          }
+          
+          const GLO_7_input = document.querySelector(".btn_two .GLO_7_input");
+          document.querySelectorAll('.quantity_and_submit_wrapper .quantity-up').forEach(plus_btn => {
+              plus_btn.addEventListener('click', (e) => {
+                  document.querySelector(".quantity-button.quantity-up").click();
+                  let actual_plus_total = document.querySelector(".input-text.qty.text").value;
+                  document.querySelectorAll(".GLO_7_input").forEach(plus_total => {
+                      plus_total.value = actual_plus_total;
+                  })
+              });
+          });
+          document.querySelectorAll('.quantity_and_submit_wrapper .quantity-down').forEach(minus_btn => {
+              minus_btn.addEventListener('click', (e) => {
+                  document.querySelector(".quantity-button.quantity-down").click();
+                  let actual_minus_total = document.querySelector(".input-text.qty.text").value;
+                  document.querySelectorAll(".GLO_7_input").forEach(plus_total => {
+                      plus_total.value = actual_minus_total;
+                  })
+              });
+          });
+  
+        },
+      };
+      GLO_7.init();
+    }
+  });
+
+<style>
+.GLO_7 .woocommerce-product-details__short-description{
+	display: none;
+}
+.GLO_7 .cart.has-unit-price-observer{
+	border-radius: 4px;
+	border: 1px solid #AD976E;
+	min-width: 436px;
+    width: 100%;
+}
+.GLO_7 .product-information .entry-summary ul li{
+	list-style: none;
+	margin: 0;
+}
+.GLO_7 .product-information .entry-summary ul{
+	margin: 0;
+}
+.GLO_7 .entry-summary .shipping_section{
+	padding-top: 8px;
+}
+.GLO_7 .entry-summary .sublist {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+}
+.GLO_7 .entry-summary .sublist span{
+	color: #404B3B;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+}
+.GLO_7 .entry-summary .sublist span:not(:last-child){
+	 padding-bottom: 8px;
+}
+.GLO_7 .entry-summary .sublist span:last-child{
+	 padding-bottom: 12px;
+}
+.GLO_7 .shipping_section .shipping_section_heading {
+    display: flex;
+    padding-bottom: 8px;
+}
+.GLO_7 .shipping_section .shipping_section_heading P {
+	color: #404B3B;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 25.6px;
+	margin-bottom: 0;
+}
+.GLO_7 .shipping_section .shipping_section_heading .svg_wrapper {
+    padding-right: 8px;
+}
+.wc-gzd-additional-info.delivery-time-info,.stock.in-stock{
+	display: none;
+}
+.GLO_7 .legal-price-info .wc-gzd-additional-info,.GLO_7 .price.price-unit.smaller.wc-gzd-additional-info span{
+	color: #424935;
+	font-size: 9px !important;
+	font-weight: 400;
+	line-height: 9px;
+}
+.GLO_7 .price.price-unit.smaller.wc-gzd-additional-info{
+	padding: 4px 0;
+}
+.GLO_7 .product-information .price .amount{
+	color: #424935;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 20px; 
+}
+.GLO_7 .wcsatt-options-prompt-action{
+	color: #333;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 25.6px;
+	text-transform: none;
+}
+.GLO_7 .option_two .wcsatt-options-prompt-action{
+	display: none;
+}
+.GLO_7 .wcsatt-options-prompt-action-custom,.GLO_7 .wcsatt-options-prompt-action-custom .subscription-price{
+	color: #333;
+	font-size: 16px;
+	line-height: 25.6px;
+	text-transform: none;
+}
+.GLO_7 .wcsatt-options-prompt-action-custom{
+	font-weight: 600;
+}
+.GLO_7 .wcsatt-options-prompt-action-custom .subscription-price{
+	font-weight: 400;
+}
+.GLO_7 .wcsatt-options-prompt-action-custom .subscription-price .line-through {
+	text-decoration: line-through;
+}
+.GLO_7 .wcsatt-options-prompt-action-custom .subscription-price{
+	padding-left: 20px;
+}
+.GLO_7 .quantity.buttons_added,.single_add_to_cart_button.button.alt.wp-element-button{
+	display: none;
+}
+.GLO_7 .quantity_and_submit_wrapper{
+	display: flex;
+    align-items: center;
+    padding-top: 16px;
+}
+.GLO_7 .quantity_and_submit_wrapper .GLO_7_input{
+	border-radius: 4px;
+    border: 1px solid #AD976E;
+    background: #fff;
+    width: 86px;
+    color: #424935;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: center;
+    height: 48px;
+}
+.GLO_7 .quantity_and_submit_wrapper .quantity-nav{
+	position: absolute;
+}
+.GLO_7 .quantity_and_submit_wrapper .quantity-down{
+	position: relative;
+    top: 15px;
+    left: 13px;
+    display: inline-block;
+}
+.GLO_7 .quantity-up{
+	position: relative;
+    bottom: 32px;
+    left: 70px;
+    display: inline-block;
+}
+.GLO_7 .glo_submit_btn{
+	border-radius: 4px;
+	background: #AD976E;
+	max-width: 310px;
+	width: 100%;
+	margin-left: 8px;
+}
+.GLO_7 .quantity_and_submit_wrapper .glo_submit_btn button{
+	padding: 16px 0;
+	text-align: center;
+	width: 100%;
+	color: #FFF;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 16px;
+	letter-spacing: 1.1px;
+	text-transform: uppercase;
+}
+.GLO_7 .option_two .price>span {
+    display: unset;
+    vertical-align: unset;
+}
+.GLO_7 .option_two .wcsatt-options-prompt-label,.GLO_7 .option_one .wcsatt-options-prompt-label{
+	width: 100%;
+}
+.GLO_7 .option_two{
+	position: relative;
+}
+.GLO_7 .option_one,.option_two{
+	padding: 16px;
+}
+.GLO_7 .option_two::before{
+	position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #ad976e;
+    top: 0;
+    left: 0;
+}
+.d-none{
+	display: none !important;
+}
+.d-block{
+	display: flex !important;
+}
+.opacity{
+	opacity: 0.5;
+}
+.GLO_7 .option_two .quantity_and_submit_wrapper .active{
+	display: block;
+}
+.GLO_7 .cart.has-unit-price-observer {
+    padding: 0px; 
+    min-width: unset; 
+    width: 100%;
+}
+.GLO_7 .wcsatt-options-product-prompt {
+    margin-bottom: 0em;
+}
+.wcsatt-options-prompt-label input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #AD976E;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+}
+.wcsatt-options-prompt-label input[type="radio"] {
+  display: inline-flex;;
+  align-items: center;
+  justify-content: center;
+}
+.wcsatt-options-prompt-label input[type="radio"]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #AD976E;
+}
+
+.wcsatt-options-prompt-label input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+@media (min-width: 768px) and (max-width: 991px){
+.GLO_7 .quantity_and_submit_wrapper .glo_submit_btn button {
+	font-size: 10px;
+}
+}
+@media (min-width: 992px) and (max-width: 1200px){
+.GLO_7 .quantity_and_submit_wrapper .glo_submit_btn button {
+	font-size: 13px;
+}
+}
+@media only screen and (max-width: 849px){
+.GLO_7 form.cart {
+    position: unset;
+    padding-left: 0%;
+    margin-left: 0px;
+}
+</style>

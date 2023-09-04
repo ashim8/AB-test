@@ -1,0 +1,155 @@
+function waitForElem(
+  waitFor,
+  callback,
+  minElements = 1,
+  isVariable = false,
+  timer = 10000,
+  frequency = 25
+) {
+  let elements = isVariable
+    ? window[waitFor]
+    : document.querySelectorAll(waitFor);
+  if (timer <= 0) return;
+  (!isVariable && elements.length >= minElements) ||
+  (isVariable && typeof window[waitFor] !== "undefined")
+    ? callback(elements)
+    : setTimeout(
+        () =>
+          waitForElem(
+            waitFor,
+            callback,
+            minElements,
+            isVariable,
+            timer - frequency
+          ),
+        frequency
+      );
+}
+waitForElem("#PageContainer .transition-body", (element) => {
+  if (element) {
+    let glr_20 = {
+      init: function () {
+        this.mainCss();
+        this.mainJs();
+      },
+      mainCss: function () {
+        var styles = document.createElement("style");
+        styles.setAttribute("type", "text/css");
+        document.head.appendChild(styles).textContent = ``;
+      },
+      mainJs: function () {
+        document.querySelector('body').classList.add('glr_20');
+        
+        let topbar = 
+        `<div class="topbar">
+        	<ul>
+        	<li class="list-style">
+	        	<div class="startIcon">
+	        		<img src="https://i.ibb.co/4df5t0N/game-icons-round-star.png" alt="round-star">
+	        		<img src="https://i.ibb.co/4df5t0N/game-icons-round-star.png" alt="round-star">
+	        		<img src="https://i.ibb.co/4df5t0N/game-icons-round-star.png" alt="round-star">
+	        		<img src="https://i.ibb.co/4df5t0N/game-icons-round-star.png" alt="round-star">
+	        		<img src="https://i.ibb.co/4df5t0N/game-icons-round-star.png" alt="round-star">
+	        	</div>
+	        	<p>4.98</p>
+        	</li>
+        	<li>
+        		<span><img src="https://i.ibb.co/bPDH49h/fluent-emoji-flat-package.png" alt="fluent-emoji-flat-package"></span>
+        		<p>Kostenloser Versand ab 49 €</p>
+        	</li>
+
+        	<li>
+        		<span><img src="https://i.ibb.co/ZR9LRfX/Lab.png" alt="lab"></span>
+        		<p>Laborgeprüfte Qualität<p>
+        	</li>
+        	
+        	<li>
+        		<span><img src="https://i.ibb.co/y6vVVPk/emojione-four-leaf-clover.png" alt="emojione-four-leaf-clover"></span>
+        		<p>100% natürlich, ohne Zusätze<p>
+        	</li>
+        	</ul>
+        </div>`
+        let transition_body = document.querySelector('#PageContainer .transition-body').childNodes[1];
+        if(transition_body){
+		    transition_body.insertAdjacentHTML('afterbegin', topbar);
+		    
+		 }
+      },
+    };
+    glr_20.init();
+  }
+});
+
+
+<style>
+#SiteHeader .d1-header-bar{
+	display: none;
+}
+#PageContainer .page-width{
+	display: none;
+}
+#PageContainer .topbar ul li{
+	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+}
+.startIcon{
+	display: flex;
+}
+.topbar{
+	display: flex;
+	padding: 8px 0;
+}
+.topbar li img{
+	min-width: 16.5px;
+	height:16.5px;
+}
+#PageContainer .topbar ul{
+	display: flex;
+    max-width: 980px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: scroll;
+    -ms-overflow-style: none;
+	scrollbar-width: none; 
+}
+#PageContainer .topbar ul li p{
+	padding-left: 8px;
+	display: inline-block;
+	color: #0A0084;
+	font-size: 11px;
+	font-weight: 400;
+	line-height: 16.5px;
+	letter-spacing: 0.88px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+.topbar ul::-webkit-scrollbar {
+  display: none;
+}
+#PageContainer .topbar ul li:nth-child(2),#PageContainer .topbar li:nth-child(3){
+	padding: 0 30px;
+}
+#PageContainer .topbar ul li:nth-child(1){
+	padding-right: 30px;
+}
+#PageContainer .topbar ul li:nth-child(4){
+	padding-left: 30px;
+}
+#PageContainer .topbar ul li:not(:last-child){
+	border-right: 0.5px solid #5D5E60;
+}
+
+@media (max-width: 767px){
+	#PageContainer .topbar ul li {
+    	white-space: normal; 
+    	justify-content: center;
+    	min-width: 50vw;
+	}
+	#PageContainer .topbar ul li p{
+		white-space: normal;
+	}
+}
+</style>
+
+
